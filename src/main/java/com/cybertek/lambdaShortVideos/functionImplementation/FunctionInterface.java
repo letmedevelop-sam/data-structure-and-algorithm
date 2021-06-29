@@ -43,9 +43,10 @@ public class FunctionInterface {
                 // ;
 
         names.sort(lastCharCom);
-
+        int i = 0;
         for (String name : names) {
-            System.out.println("each item : " + name);
+            i++;
+            System.out.println(i+". item : " + name);
         }
 
         UnaryOperator<String> unary = str->str.substring(2,3);

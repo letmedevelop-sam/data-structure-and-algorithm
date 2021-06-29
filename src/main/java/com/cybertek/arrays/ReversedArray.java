@@ -9,10 +9,10 @@ public class ReversedArray {
 
         System.out.println("The order of array before implementation");
         printArray(numbers);
+        System.out.println();
 
         System.out.println("The reversed order of array after implementation");
         printArray(reversedArray(numbers));
-
 
     }
 

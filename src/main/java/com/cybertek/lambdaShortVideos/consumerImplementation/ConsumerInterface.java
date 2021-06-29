@@ -17,8 +17,6 @@ public class ConsumerInterface {
         names.forEach(doublePrinter);
 
         names.forEach(each -> System.out.println(each + " & " + each + " & " + each));
-
-
     }
 }
 

@@ -2,19 +2,20 @@ package com.cybertek.arrays;
 
 public class NinetyDegree {
     public static void main(String[] args) {
-        int[][] square = {{1, 2, 3,4}, { 5, 6,7,8}, { 9,10,11,12},{13,14,15,16}};
+        int[][] square = {{11, 12, 13, 14}, { 15, 16, 17, 18}, { 19, 20, 21, 22}, {23, 24, 25, 26}};
         System.out.println("Initial condition of square");
         printSquare(square);
+        System.out.println();
 
         System.out.println("After implementation of rotate method for clockwise");
         printSquare(rotateSquareClockWise(square));
+        System.out.println();
 
         System.out.println("After implementation of rotate method for anti clockwise");
         printSquare(rotateSquareReverseOfClockWise(square));
 
-
-
     }
+
 
     static int[][] rotateSquareClockWise(int[][] square) {
 
@@ -27,11 +28,10 @@ public class NinetyDegree {
             for (int j = 0; j < square[0].length; j++) {
                 rotatedSquare[j][rotatedSquareColumns - 1 - i] = square[i][j];
             }
-
         }
-
         return rotatedSquare;
     }
+
 
     static int [][] rotateSquareReverseOfClockWise(int [][] square){
         int rotatedSquareRows = square[0].length;
@@ -43,11 +43,10 @@ public class NinetyDegree {
             for (int j = 0; j < square[0].length; j++) {
                 rotatedSquare[rotatedSquareRows-1-j][i] = square[i][j];
             }
-
         }
-
         return rotatedSquare;
     }
+
 
     static void printSquare(int [][] matrix){
 
@@ -58,6 +57,4 @@ public class NinetyDegree {
             System.out.println();
         }
     }
-
-
 }
