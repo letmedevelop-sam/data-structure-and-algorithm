@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Exam {
@@ -51,9 +52,9 @@ public class Exam {
      */
     public static Map<CourseStatus, Long> countCoursesByStatus() {
         //Write your code..
-        Map<CourseStatus,Long> countCourses = new HashMap<>();
-        //DataGenerator.fillCoursesAssigned().stream().map(courseAssigned -> countCourses.put(courseAssigned.getStatus(),))
-        return null;
+
+         return DataGenerator.fillCoursesAssigned().stream().map(courseAssigned -> courseAssigned.getStatus()).collect(Collectors.toList()).stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+
     }
 
     /**
@@ -62,7 +63,8 @@ public class Exam {
      * @return sum of duration.
      */
     public static Integer sumDurationForAllData() {
-        return null;
+        return (int) DataGenerator.fillCourses().stream().map(course -> course.getDuration()).reduce(0,(x,y)->x+y);
+
     }
 
     /**
@@ -71,9 +73,10 @@ public class Exam {
      * @return
      */
     public static List<CourseAssigned> findCoursesByUser() {
-        User specificUser = DataGenerator.findUserById(6);
+        User specificUser = DataGenerator.findUserById(5);
         //Write your code to return all courses by specific user...;
-        return null;
+
+        return DataGenerator.fillCoursesAssigned().stream().filter(courseAssigned -> courseAssigned.getUser().equals(specificUser)).collect(Collectors.toList());
     }
 
     /**
@@ -81,6 +84,8 @@ public class Exam {
      * Modify response to show only course name, course duration, (user firstName + user lastName)
      */
     public static List<Map<String, Object>> modifyObject() {
+
+
         return null;
     }
 
@@ -92,8 +97,9 @@ public class Exam {
      */
     public static BigDecimal divideToWeek() {
         User specificUser = DataGenerator.findUserById(6);
-        BigDecimal divideToWeek = new BigDecimal(40);
+
         return null;
+
     }
 
 }

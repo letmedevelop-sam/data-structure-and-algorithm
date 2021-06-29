@@ -1,5 +1,7 @@
 package com.cybertek.streamLambdaExercise;
 
+import java.math.BigDecimal;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Read all managers:  " + Exam.readAllManagers());
@@ -10,6 +12,7 @@ public class Main {
         System.out.println("Find courses by specific user:  " + Exam.findCoursesByUser());
         System.out.println("Modify object:  " + Exam.modifyObject());
         System.out.println("Divide to week:  " + Exam.divideToWeek());
+
     }
 }
 
